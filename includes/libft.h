@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shapka.c                                           :+:      :+:    :+:   */
+/*   shapka                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggerardy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:25:22 by ggerardy          #+#    #+#             */
-/*   Updated: 2018/12/09 04:47:12 by ggerardy         ###   ########.fr       */
+/*   Updated: 2019/03/15 00:55:37 by ggerardy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,18 @@
 # define LIBFT_H
 
 # include <string.h>
+# include "ft_types.h"
 # include "ft_map.h"
+# include "ft_string.h"
+# include "ft_printf.h"
+
+# define FT_ABS(x) (((x) >= 0) ? (x) : -(x))
+
+void				ft_swap(void *a, void *b, size_t s);
+
+int					ft_word_count(const char *str);
+
+int					ft_get_next_line(int fd, char **line, int buff_size);
 
 char				*ft_strset(char *b, int c, size_t size);
 
@@ -50,6 +61,8 @@ size_t				ft_strlcat(char *dest, const char *src, size_t size);
 
 char				*ft_strchr(const char *str, int ch);
 
+char				*ft_rstrchr(const char *str, int ch);
+
 char				*ft_strrchr(const char *str, int ch);
 
 char				*ft_strstr(const char *str, const char *to_find);
@@ -62,6 +75,10 @@ int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, unsigned int n);
 
 int					ft_atoi(const char *str);
+
+int					ft_atoi_m(const char **str);
+
+long				ft_atoi_base_m(const char **str, int radix);
 
 int					ft_isalpha(int c);
 
@@ -92,6 +109,9 @@ char				**ft_split_charset(char const *str, char const *charset);
 void				ft_print_words_table(char const **tab);
 
 void				ft_free_matrix(void **ptr, size_t n);
+
+void				*ft_realloc(void *old_data, size_t prev_size,
+														size_t new_size);
 
 void				*ft_memalloc(size_t size);
 
@@ -124,6 +144,8 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 
 char				*ft_itoa(int n);
+
+char				*ft_itoa_buf(int n, char *res);
 
 void				ft_putchar(char c);
 
@@ -167,5 +189,19 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+char				*ft_ftoa(double num, int acc);
+
+int					ft_intlen(long int nb);
+
+char				*ft_tolower_str(char *str);
+
+char				*ft_toupper_str(char *str);
+
+char				ft_unilen(int u);
+
+size_t				ft_strlen_u(const int *s, char f);
+
+char				*ft_int_to_unicode(int n, char *bytes);
 
 #endif

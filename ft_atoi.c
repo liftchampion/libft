@@ -6,13 +6,13 @@
 /*   By: ggerardy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:25:22 by ggerardy          #+#    #+#             */
-/*   Updated: 2018/11/29 16:09:36 by ggerardy         ###   ########.fr       */
+/*   Updated: 2019/03/15 00:55:37 by ggerardy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int					ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
 	int				sign;
 	int				i;
@@ -33,5 +33,5 @@ int					ft_atoi(const char *str)
 		if ((res < res_tmp && sign == 1) || (res > res_tmp && sign == -1))
 			return (sign == 1 ? -1 : 0);
 	}
-	return (res);
+	return ((int)res);
 }

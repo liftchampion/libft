@@ -6,7 +6,7 @@
 /*   By: ggerardy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:25:22 by ggerardy          #+#    #+#             */
-/*   Updated: 2018/11/26 17:25:22 by ggerardy         ###   ########.fr       */
+/*   Updated: 2019/03/15 00:55:37 by ggerardy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,20 +96,23 @@ void			**rb_tree_insert_data(t_map *map, void *key)
 
 	if (!map->root)
 	{
-		map->root = rb_tree_create_node(key, 0, 0, map);
+		if (!(map->root = rb_tree_create_node(key, 0, 0, map)))
+			return (0);
 		map->root->color = RB_BLACK;
-		return (&map->root->value);
+		return (&(map->root->value));
 	}
 	current_node = map->root;
 	while (current_node != map->nil)
 	{
 		cmp_res = map->info->cmp_f(key, current_node->key);
 		if (!cmp_res)
-			return (&current_node->value);
+			return (&(current_node->value));
 		parent = current_node;
 		current_node = cmp_res < 0 ? current_node->left : current_node->right;
 	}
 	current_node = rb_tree_create_node(key, parent, cmp_res < 0, map);
+	if (!current_node)
+		return (0);
 	rb_tree_balance_insert(current_node, map);
-	return (&current_node->value);
+	return (&(current_node->value));
 }

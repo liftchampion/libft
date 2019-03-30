@@ -6,7 +6,7 @@
 /*   By: ggerardy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:25:22 by ggerardy          #+#    #+#             */
-/*   Updated: 2018/11/26 17:25:22 by ggerardy         ###   ########.fr       */
+/*   Updated: 2019/03/15 00:55:37 by ggerardy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,4 @@ void		ft_lstadd(t_list **alst, t_list *new)
 		return ;
 	new->next = *alst;
 	*alst = new;
-	return ;
 }

@@ -1,43 +1,70 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shapka.c                                           :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggerardy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ehugh-be <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 17:25:22 by ggerardy          #+#    #+#             */
-/*   Updated: 2018/11/26 17:25:22 by ggerardy         ###   ########.fr       */
+/*   Created: 2018/11/21 15:32:43 by ehugh-be          #+#    #+#             */
+/*   Updated: 2019/03/15 00:55:37 by ggerardy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int		sign;
-	char	*res;
-	int		tmp[10];
-	int		i;
-	int		j;
+	int		nb;
+	int		len;
+	char	*ret;
 
-	sign = (n >= 0 ? 1 : -1);
-	i = (n == 0 ? 1 : 0);
-	j = 0;
-	tmp[0] = 0;
-	while (n != 0)
+	len = 2;
+	if (n < 0)
+		len++;
+	nb = n;
+	while (!(nb < 10 && nb > -10))
 	{
-		tmp[i] = n % 10 * sign;
-		n /= 10;
-		i++;
+		len++;
+		nb /= 10;
 	}
-	res = (char*)malloc(i + (sign == -1) + 1);
-	if (!res)
-		return (0);
-	if (sign == -1)
-		res[j++] = '-';
-	while (i > 0)
-		res[j++] = tmp[--i] + '0';
-	res[j] = 0;
-	return (res);
+	if (!(ret = (char *)malloc(sizeof(char) * len)))
+		return (NULL);
+	ret[--len] = '\0';
+	nb = (n < 0) ? -1 : 1;
+	while (n || len)
+	{
+		ret[--len] = n % 10 * nb + '0';
+		n /= 10;
+	}
+	if (nb < 0)
+		ret[0] = '-';
+	return (ret);
+}
+
+char	*ft_itoa_buf(int n, char *res)
+{
+	int		nb;
+	int		len;
+	char	*rt;
+
+	rt = res;
+	len = 2;
+	if (n < 0)
+		len++;
+	nb = n;
+	while (!(nb < 10 && nb > -10))
+	{
+		len++;
+		nb /= 10;
+	}
+	res[--len] = '\0';
+	nb = (n < 0) ? -1 : 1;
+	while (n || len)
+	{
+		res[--len] = n % 10 * nb + '0';
+		n /= 10;
+	}
+	if (nb < 0)
+		res[0] = '-';
+	return (rt);
 }
