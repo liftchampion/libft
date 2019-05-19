@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   shapka.c                                           :+:      :+:    :+:   */
+/*   ft_strsub_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ggerardy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/26 17:25:22 by ggerardy          #+#    #+#             */
-/*   Updated: 2019/03/15 00:55:37 by ggerardy         ###   ########.fr       */
+/*   Created: 2019/04/08 20:23:32 by ggerardy          #+#    #+#             */
+/*   Updated: 2019/04/08 20:29:10 by ggerardy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_types.h"
 #include <stdlib.h>
+#include "libft.h"
 
-t_del_func		ft_get_del_func(t_type type)
+char		*ft_strsub_char_m(char **s, char c, int init_size)
 {
-	if ((type >= INT8_T && type <= CHAR) || type == NON_FREE_STR)
+	char			*str;
+	t_string		*res;
+
+	if (!s || !*s)
 		return (0);
-	else if (type >= STRING && type <= ARRAY)
-		return (free);
-	return (free);
+	if (!(res = ft_make_string(init_size)))
+		return (0);
+	while (**s != c && **s)
+	{
+		if (!ft_string_push_back(&res, **s))
+			return (0);
+		++(*s);
+	}
+	str = res->data;
+	free(res);
+	return (str);
 }

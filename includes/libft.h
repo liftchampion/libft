@@ -6,7 +6,7 @@
 /*   By: ggerardy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 17:25:22 by ggerardy          #+#    #+#             */
-/*   Updated: 2019/03/15 00:55:37 by ggerardy         ###   ########.fr       */
+/*   Updated: 2019/04/08 21:22:41 by ggerardy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,15 @@
 # include "ft_map.h"
 # include "ft_string.h"
 # include "ft_printf.h"
+# include "ft_mlx.h"
 
 # define FT_ABS(x) (((x) >= 0) ? (x) : -(x))
+
+ssize_t				ft_read(int fd, void *buf, size_t buf_size);
+
+char				*ft_strsub_char_m(char **s, char c, int init_size);
+
+int					free_ret(void *to_free, int ret);
 
 void				ft_swap(void *a, void *b, size_t s);
 
@@ -76,7 +83,7 @@ int					ft_strncmp(const char *s1, const char *s2, unsigned int n);
 
 int					ft_atoi(const char *str);
 
-int					ft_atoi_m(const char **str);
+int					ft_atoi_m(char **str);
 
 long				ft_atoi_base_m(const char **str, int radix);
 
@@ -112,6 +119,9 @@ void				ft_free_matrix(void **ptr, size_t n);
 
 void				*ft_realloc(void *old_data, size_t prev_size,
 														size_t new_size);
+
+void				*ft_realloc_free(void *old_data, size_t prev_size,
+					size_t new_size, void (*free_data)(void*));
 
 void				*ft_memalloc(size_t size);
 

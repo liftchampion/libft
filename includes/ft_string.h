@@ -6,7 +6,7 @@
 /*   By: ggerardy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/13 02:00:02 by ggerardy          #+#    #+#             */
-/*   Updated: 2019/03/15 00:55:37 by ggerardy         ###   ########.fr       */
+/*   Updated: 2019/04/08 19:15:15 by ggerardy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,16 @@ typedef struct	s_vector
 	size_t		len;
 	size_t		capacity;
 	int			offset;
+	void		(*free_data)(void*);
 }				t_vector;
 
 t_vector		*ft_make_vector(size_t init_size);
+t_vector		*ft_make_vector_free(size_t init_size,
+					void (*free_data)(void*));
 t_vector		*ft_vector_cpy(const t_vector *src);
 void			ft_free_vector(t_vector **v);
+void			ft_free_vector_simple(void *v);
+int				ft_free_ret_vector(t_vector **v, int ret);
 t_int8			ft_vector_push_back(t_vector **v_ptr, void *c);
 t_int8			ft_vector_fit(t_vector **v_ptr);
 
