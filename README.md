@@ -6,8 +6,8 @@
 **[ft_str](https://github.com/liftchampion/libft/tree/master/ft_str)**: функции для работы со строками  
 Большая их часть дублирует функции из `stdlib.h` и `string.h`  
 **[ft_mem](https://github.com/liftchampion/libft/tree/master/ft_mem)**: функции для работы с памятью  
-Большая их часть дублирует функции из `stdlib.h`
-**[ft_numbers](https://github.com/liftchampion/libft/tree/master/ft_numbers)**: функции для работы с числами
+Большая их часть дублирует функции из `stdlib.h`  
+**[ft_numbers](https://github.com/liftchampion/libft/tree/master/ft_numbers)**: функции для работы с числами  
 **[ft_lst](https://github.com/liftchampion/libft/tree/master/ft_lst)**: функции для работы со списками  
 Написаны исходя из требований задания. Не используются  
 **[ft_gnl](https://github.com/liftchampion/libft/tree/master/ft_gnl)**: get_next_line - функция,
