@@ -10,8 +10,7 @@
 **[ft_numbers](https://github.com/liftchampion/libft/tree/master/ft_numbers)**: функции для работы с числами  
 **[ft_lst](https://github.com/liftchampion/libft/tree/master/ft_lst)**: функции для работы со списками  
 Написаны исходя из требований задания. Не используются  
-**[ft_gnl](https://github.com/liftchampion/libft/tree/master/ft_gnl)**  
-Более подробное описание [здесь](https://github.com/liftchampion/get_next_line/blob/master/README.md)    
+**[ft_gnl](https://github.com/liftchampion/libft/tree/master/ft_gnl)**:  Более подробное описание [здесь](https://github.com/liftchampion/get_next_line/blob/master/README.md)  
 **[ft_printf](https://github.com/liftchampion/libft/tree/master/ft_printf)**: воспроизведение оригинального `printf`.  
 Более подробное описание [здесь](https://github.com/liftchampion/ft_printf/blob/master/README.md)  
 **[ft_string](https://github.com/liftchampion/libft/tree/master/ft_string)**: реализация векторной строки  
