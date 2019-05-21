@@ -38,4 +38,6 @@
 
 ## [Тесты](https://bitbucket.org/liftchampion/42_school_libft_main/src/master/main.c)
 
+
+
 *C код написан в [Norminette code style](https://github.com/liftchampion/Norminette)*
