@@ -36,7 +36,6 @@
 ## Как подключить?  
 `gcc -I /path/to/libft/includes /path/to/libft/libft.a ...`
 
-## Тесты
-[Bitbucket](https://bitbucket.org/liftchampion/42_school_libft_main/src/master/main.c)
+## [Тесты](https://bitbucket.org/liftchampion/42_school_libft_main/src/master/main.c)
 
 *C код написан в [Norminette code style](https://github.com/liftchampion/Norminette)*
