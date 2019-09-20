@@ -33,6 +33,7 @@
 `gcc -I /path/to/libft/includes /path/to/libft/libft.a ...`
 
 ## [Тесты](https://bitbucket.org/liftchampion/42_school_libft_main/src/master/main.c)
+`curl https://bitbucket.org/liftchampion/42_school_libft_main/raw/9065702b51a6ce21cc65d505ff40fc6e405e905f/main.c > main.c`
 
 
 
